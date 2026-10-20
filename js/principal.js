@@ -24,6 +24,21 @@ const listaPokemons = [
         vida: 2,
         srcImg: 'imgs/rhydon.png'
     },
+    {
+        nome: 'Rhydom',
+        vida: 2,
+        srcImg: 'imgs/rhydon.png'
+    },
+    {
+        nome: 'Rhydom',
+        vida: 2,
+        srcImg: 'imgs/rhydon.png'
+    },
+    {
+        nome: 'Rhydom',
+        vida: 2,
+        srcImg: 'imgs/rhydon.png'
+    },
 
 ];
 
