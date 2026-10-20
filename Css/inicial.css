@@ -1,5 +1,7 @@
 body{
-    background-color: cyan;
+    background-image: url(../imgs/Fundo_da_tela.png);
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .inicial{
@@ -15,5 +17,6 @@ body{
     border: saddlebrown 1px solid;
     border-radius: 20px;
     background-color: rgb(250, 230, 120);
-    color: purple;
+    color: indigo;
+    padding: 10px;
 }
