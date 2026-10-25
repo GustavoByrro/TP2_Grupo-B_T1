@@ -1,24 +1,42 @@
 <html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../TP2_Grupo-B_T1/Css/inicial.css">
-    </head>
-    <body>
+<head>
+    <link rel="stylesheet" href="Css/inicial.css">
+</head>
+<body>
+    <div class="tela" id="inicial">
         <h3 class="inicial">
             Poke Defense
         </h3>
-        <button class="inicial" id="botao">
+        <button class="botao" onclick="mudarTela('jogo')">
             Iniciar
+            </button>
+        <br>
+        <button class="botao " onclick="mudarTela('ranking')"> Ranking
         </button>
         <br>
-        <button class="inicial" id="botao">
-            Ranking
+        <button class="botao" onclick="mudarTela('tutorial')">
+                Tutorial / Controles
         </button>
-        <br>
-        <button class="inicial" id="botao">
-            Tutorial / Controles
+    </div>
+
+    <div class="tela" id="jogo">
+        <button class="botao" onclick="mudarTela('inicial')">
+            <
         </button>
-    </body>
+    </div>
+
+    <div class="tela" id="ranking">
+        <button class="botao" onclick="mudarTela('inicial')">
+            <
+        </button>
+    </div>
+
+    <div class="tela" id="tutorial">
+        <button class="botao" onclick="mudarTela('inicial')">
+            <
+        </button>
+    </div>
+
+    <script src="js/principal.js"></script>
+</body>
 </html>
