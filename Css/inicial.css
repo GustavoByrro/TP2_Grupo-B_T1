@@ -11,12 +11,10 @@ body {
     display: block;
 }
 
-.inicial {
+.titulo {
     color: red;
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
     font-size: 60px;
 }
 
@@ -27,7 +25,30 @@ body {
     color: indigo;
     padding: 10px;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
     font-size: 60px;
+    margin: 10px auto;
+}
+
+.pause{
+    border: saddlebrown 1px solid;
+    border-radius: 10px;
+    background-color: rgb(250, 230, 120);
+    color: indigo;
+    padding: 5px 10px;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.voltar{
+    border: saddlebrown 1px solid;
+    border-radius: 10px;
+    background-color: rgb(250, 230, 120);
+    color: indigo;
+    padding: 5px 10px;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }

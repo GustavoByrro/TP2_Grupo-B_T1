@@ -4,37 +4,42 @@
 </head>
 <body>
     <div class="tela" id="inicial">
-        <h3 class="inicial">
+        <h3 class="titulo">
             Poke Defense
         </h3>
         <button class="botao" onclick="mudarTela('jogo')">
             Iniciar
-            </button>
-        <br>
-        <button class="botao " onclick="mudarTela('ranking')"> Ranking
         </button>
-        <br>
+        <button class="botao" onclick="mudarTela('ranking')">
+             Ranking
+        </button>
         <button class="botao" onclick="mudarTela('tutorial')">
                 Tutorial / Controles
         </button>
     </div>
 
     <div class="tela" id="jogo">
-        <button class="botao" onclick="mudarTela('inicial')">
-            <
+        <button class="pause" onclick="mudarTela('pausa')">
+            ||
         </button>
     </div>
 
     <div class="tela" id="ranking">
-        <button class="botao" onclick="mudarTela('inicial')">
+        <button class="voltar" onclick="mudarTela('inicial')">
             <
         </button>
     </div>
 
     <div class="tela" id="tutorial">
-        <button class="botao" onclick="mudarTela('inicial')">
+        <button class="voltar" onclick="mudarTela('inicial')">
             <
         </button>
+    </div>
+
+    <div class="tela" id="pausa">
+        <button class="botao" onclick="retomarJogo()">Retomar</button>
+        <button class="botao">Música</button>
+        <button class="botao" onclick="mudarTela('inicial')">Tela Inicial</button>
     </div>
 
     <script src="js/principal.js"></script>
