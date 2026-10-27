@@ -22,3 +22,11 @@ function retomarJogo() {
     if (telaAnterior != '')
         mudarTela(telaAnterior);
 }
+
+let contador = document.querySelector('#pontuacao');
+let pontos = 0; 
+
+function aumentarPontos() {
+    pontos += 1;
+    contador.textContent = pontos;
+}
