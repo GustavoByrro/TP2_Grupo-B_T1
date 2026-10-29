@@ -98,3 +98,25 @@ body {
     border-radius: 12px;
 }
 #pontuacao:empty { display: none; }
+
+#ranking h2,
+#tutorial h2 {
+    font-size: 32px;
+    color: white;
+    text-shadow: 3px 3px 0 #1f2a6b;
+}
+
+#ranking p, #ranking ol, #ranking ul, #ranking table,
+#tutorial p, #tutorial ol, #tutorial ul {
+    max-width: 700px;
+    margin: 15px auto;
+    padding: 18px 24px;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: left;
+    background-color: rgba(255, 250, 220, 0.92);
+    border: 4px solid saddlebrown;
+    border-radius: 12px;
+}
+#ranking table { width: 100%; max-width: 700px; text-align: center; }
+#ranking ol, #ranking ul, #tutorial ol, #tutorial ul { padding-left: 50px; }
