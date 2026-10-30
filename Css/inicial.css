@@ -120,3 +120,8 @@ body {
 }
 #ranking table { width: 100%; max-width: 700px; text-align: center; }
 #ranking ol, #ranking ul, #tutorial ol, #tutorial ul { padding-left: 50px; }
+
+#pausa {
+    padding-top: 120px;
+    background-color: rgba(0, 0, 40, 0.55);
+}
