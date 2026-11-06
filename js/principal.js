@@ -26,6 +26,17 @@ function retomarJogo() {
 let contador = document.querySelector('#pontuacao');
 let pontos = 0; 
 
+function iniciarNovoJogo() {
+    pontos = 0; // Zera a pontuação
+    contador.textContent = pontos; // Atualiza o texto na tela
+    mudarTela('jogo'); // Vai para a tela do jogo
+}
+
+function retomarJogo() {
+    if (telaAnterior != '')
+        mudarTela(telaAnterior); // Mantém os pontos atuais
+}
+
 function aumentarPontos() {
     pontos += 1;
     contador.textContent = pontos;
@@ -44,13 +55,13 @@ document.addEventListener('keydown', function(e){
         else if(telaRanking.style.display === 'block' || telaTutorial.style.display === 'block')
             mudarTela('inicial');
         else if(telaPausa.style.display === 'block')
-            mudarTela('jogo');
+            mudarTela('inicial');  
     }
 
     if(e.key === 'Enter'){
         if(telaInicial.style.display === 'block')
-            mudarTela('jogo');
+            iniciarNovoJogo(); // Se vier da inicial, zera e começa
         else if(telaPausa.style.display === 'block')
-            mudarTela('inicial');
+            retomarJogo(); // Se vier da pausa, mantém os pontos
     }
 })
