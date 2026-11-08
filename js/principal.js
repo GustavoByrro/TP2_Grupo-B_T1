@@ -1,7 +1,20 @@
-let telaAnterior = ''; 
+const listaPokemons = [
+    {
+        nome: 'nome',
+        vida: 0,
+        srcImg: 'imgs/imgPokebolaIcone.png'
+    },
+    {
+        nome: 'b',
+        vida: 0,
+        srcImg: 'imgs/Fundo_da_Tela.png'
+    }
+];
 
 function mudarTela(telaDesejada) {
     let secoes = document.querySelectorAll('.tela');
+    let topo = document.querySelector('.transicao-metade.topo');
+    let baixo = document.querySelector('.transicao-metade.baixo');
 
     if (telaDesejada === 'pausa') {
         secoes.forEach(secao => {
@@ -10,10 +23,27 @@ function mudarTela(telaDesejada) {
             }
         });
     }
+    if(telaDesejada != 'pausa'){
+        topo.classList.remove('animar-topo');
+        baixo.classList.remove('animar-baixo');
+
+        void topo.offsetWidth;
+
+        topo.classList.add('animar-topo');
+        baixo.classList.add('animar-baixo');
+
+        setTimeout(() => {
+            secoes.forEach(secao =>  {
+                secao.style.display = 'none';
+            });
+            document.getElementById(telaDesejada).style.display = 'block';
+        }, 300);
+    }
 
     secoes.forEach(secao =>  {
         secao.style.display = 'none';
     });
+
 
     document.getElementById(telaDesejada).style.display = 'block';
 }
@@ -27,14 +57,14 @@ let contador = document.querySelector('#pontuacao');
 let pontos = 0; 
 
 function iniciarNovoJogo() {
-    pontos = 0; // Zera a pontuação
-    contador.textContent = pontos; // Atualiza o texto na tela
-    mudarTela('jogo'); // Vai para a tela do jogo
+    pontos = 0;
+    contador.textContent = pontos;
+    mudarTela('jogo');
 }
 
 function retomarJogo() {
     if (telaAnterior != '')
-        mudarTela(telaAnterior); // Mantém os pontos atuais
+        mudarTela(telaAnterior);
 }
 
 function aumentarPontos() {
@@ -60,12 +90,15 @@ document.addEventListener('keydown', function(e){
 
     if(e.key === 'Enter'){
         if(telaInicial.style.display === 'block')
-            iniciarNovoJogo(); // Se vier da inicial, zera e começa
+            iniciarNovoJogo();
         else if(telaPausa.style.display === 'block')
-            retomarJogo(); // Se vier da pausa, mantém os pontos
+            retomarJogo();
     }
-})
+});
+
+
 let jogadores = JSON.parse(localStorage.getItem("jogadores")) || [];
+
 function finalizarJogo() {
     document.querySelector("#pontuacaoFinal").textContent =
         "Pontuação: " + pontuacao;
@@ -97,6 +130,7 @@ function salvarPontuacao() {
     atualizarRanking();
     mudarTela("inicial");
 }
+
 function atualizarRanking() {
 
     jogadores.sort((a, b) => b.pontos - a.pontos);

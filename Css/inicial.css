@@ -14,7 +14,7 @@ body {
 .tela {
     display: none;
     position: relative;
-    height: 85%;
+    height: 85.6%;
     padding: 80px 20px 20px;
     text-align: center;
 }
@@ -135,4 +135,57 @@ body {
     #pontuacao { font-size: 24px; }
     #ranking h2, #tutorial h2 { font-size: 22px; }
     #ranking p, #ranking ol, #ranking ul, #tutorial p, #tutorial ol, #tutorial ul { font-size: 13px; }
+}
+
+.transicao-metade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.transicao-metade.topo {
+    background-color: #cc0000;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 80%);
+}
+
+.transicao-metade.baixo {
+    background-color: #f0f0f0;
+    clip-path: polygon(0 80%, 100% 40%, 100% 100%, 0 100%);
+    border-top: 6px solid #222; 
+}
+
+
+.animar-topo {
+    animation: abrirTopo 0.6s ease-in-out forwards;
+}
+
+.animar-baixo {
+    animation: abrirBaixo 0.6s ease-in-out forwards;
+}
+
+@keyframes abrirTopo {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-1000px, -1000px);
+    }
+}
+
+@keyframes abrirBaixo {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(1000px, 1000px);
+    }
 }
