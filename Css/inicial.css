@@ -23,14 +23,15 @@ body {
 
 .titulo {
     margin: 20px 0 50px;
-    font-size: 64px;
+    font-size: 80px;
     line-height: 1.2;
-    color: #e3350d;
+    color: #ffcd01;
     text-shadow:
-        4px 4px 0 #ffcb05,
+        4px 4px 0 #3660AD,
         -3px -3px 0 #1f2a6b, 3px -3px 0 #1f2a6b,
         -3px 3px 0 #1f2a6b, 3px 3px 0 #1f2a6b,
         6px 8px 0 rgba(0, 0, 0, 0.35);
+        font-family: 'Pokemon Solid', sans-serif;
 }
 
 .botao,

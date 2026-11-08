@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" href="Css/inicial.css">
     <link rel="icon" href="imgs/imgPokebolaIcone.png">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid-2" rel="stylesheet">
 </head>
 <body>
     <div class="tela" id="inicial">
@@ -29,8 +30,10 @@
 
     <div class="tela" id="ranking">
         <button class="voltar" onclick="mudarTela('inicial')">
-            <
+            >
         </button>
+        <h1>Ranking</h1>
+    <ol id="lista-ranking"></ol>
     </div>
 
     <div class="tela" id="tutorial">
@@ -45,6 +48,18 @@
         <button class="botao" onclick="mudarTela('inicial')">Tela Inicial</button>
     </div>
 
+    <div class="tela" id="resultado">
+    <h1>Fim de jogo!</h1>
+
+    <h2 id="pontuacaoFinal"></h2>
+
+    <input type="text" id="nome" placeholder="Digite seu nome">
+
+    <button class="botao" onclick="salvarPontuacao()">
+        Salvar recorde
+    </button>
+</div>
+   
     <script src="js/principal.js"></script>
 </body>
 </html>

@@ -65,3 +65,47 @@ document.addEventListener('keydown', function(e){
             retomarJogo(); // Se vier da pausa, mantém os pontos
     }
 })
+let jogadores = JSON.parse(localStorage.getItem("jogadores")) || [];
+function finalizarJogo() {
+    document.querySelector("#pontuacaoFinal").textContent =
+        "Pontuação: " + pontuacao;
+    mudarTela("resultado");
+}
+
+function salvarPontuacao() {
+    let nome = document.querySelector("#nome").value.trim();
+
+    if (nome === "") {
+        alert("Digite seu nome!");
+        return;
+    }
+    let jogador = jogadores.find(j => j.nome.toLowerCase() === nome.toLowerCase());
+
+    if (jogador) {
+        if (pontuacao > jogador.pontos) {
+            jogador.pontos = pontuacao;
+        }
+    } else {
+        jogadores.push({
+            nome: nome,
+            pontos: pontuacao
+        });
+    }
+
+    localStorage.setItem("jogadores", JSON.stringify(jogadores));
+    document.querySelector("#nome").value = "";
+    atualizarRanking();
+    mudarTela("inicial");
+}
+function atualizarRanking() {
+
+    jogadores.sort((a, b) => b.pontos - a.pontos);
+    let lista = document.querySelector("#lista-ranking");
+    lista.innerHTML = "";
+
+    for (let i = 0; i < jogadores.length; i++) {
+        let item = document.createElement("li");
+        item.textContent = `${i + 1}º - ${jogadores[i].nome} - ${jogadores[i].pontos} pontos`;
+        lista.appendChild(item);
+    }
+}
