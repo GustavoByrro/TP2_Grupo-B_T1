@@ -2,13 +2,14 @@ const listaPokemons = [
     {
         nome: 'Dragonite',
         vida: 2,
-        srcImg: 'imgs/dragonite.jpeg'
+        srcImg: 'imgs/dragonite.png'
     },
     {
         nome: 'Pikachu',
         vida: 1,
-        srcImg: 'imgs/pikachu.jpeg'
+        srcImg: 'imgs/pikachu.png'
     }
+
 ];
 
 function mudarTela(telaDesejada) {
