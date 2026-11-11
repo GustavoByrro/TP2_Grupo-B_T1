@@ -149,7 +149,7 @@ body {
 }
 
 .transicao-metade.topo {
-    background-color: #cc0000;
+    background-color: #dd0000;
     clip-path: polygon(0 0, 100% 0, 100% 40%, 0 80%);
 }
 
@@ -161,11 +161,11 @@ body {
 
 
 .animar-topo {
-    animation: abrirTopo 0.6s ease-in-out forwards;
+    animation: abrirTopo 1.3s ease-in-out forwards;
 }
 
 .animar-baixo {
-    animation: abrirBaixo 0.6s ease-in-out forwards;
+    animation: abrirBaixo 1.3s ease-in-out forwards;
 }
 
 @keyframes abrirTopo {
@@ -188,4 +188,21 @@ body {
         opacity: 1;
         transform: translate(1000px, 1000px);
     }
+}
+
+.pokemon-spawn {
+    position: absolute;
+    bottom: 100px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 3s linear;
+}
+
+.spawn-esquerda {
+    left: -120px;
+}
+
+.spawn-direita {
+    right: -120px;
 }

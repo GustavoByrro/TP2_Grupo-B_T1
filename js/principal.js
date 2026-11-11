@@ -1,13 +1,13 @@
 const listaPokemons = [
     {
-        nome: 'nome',
-        vida: 0,
-        srcImg: 'imgs/imgPokebolaIcone.png'
+        nome: 'Dragonite',
+        vida: 2,
+        srcImg: 'imgs/dragonite.jpeg'
     },
     {
-        nome: 'b',
-        vida: 0,
-        srcImg: 'imgs/Fundo_da_Tela.png'
+        nome: 'Pikachu',
+        vida: 1,
+        srcImg: 'imgs/pikachu.jpeg'
     }
 ];
 
@@ -23,6 +23,7 @@ function mudarTela(telaDesejada) {
             }
         });
     }
+
     if(telaDesejada != 'pausa'){
         topo.classList.remove('animar-topo');
         baixo.classList.remove('animar-baixo');
@@ -32,20 +33,22 @@ function mudarTela(telaDesejada) {
         topo.classList.add('animar-topo');
         baixo.classList.add('animar-baixo');
 
+        secoes.forEach(secao =>  {
+            secao.style.display = 'none';
+        });
+    
         setTimeout(() => {
-            secoes.forEach(secao =>  {
-                secao.style.display = 'none';
-            });
-            document.getElementById(telaDesejada).style.display = 'block';
-        }, 300);
+                document.getElementById(telaDesejada).style.display = 'block';
+            }, 100);
+        
+            return;
     }
 
     secoes.forEach(secao =>  {
-        secao.style.display = 'none';
+            secao.style.display = 'none';
     });
-
-
     document.getElementById(telaDesejada).style.display = 'block';
+
 }
 
 function retomarJogo() {
@@ -56,10 +59,51 @@ function retomarJogo() {
 let contador = document.querySelector('#pontuacao');
 let pontos = 0; 
 
+let intervaloJogo = null;
+
 function iniciarNovoJogo() {
     pontos = 0;
     contador.textContent = pontos;
     mudarTela('jogo');
+
+    if(intervaloJogo) clearInterval(intervaloJogo);
+
+    intervaloJogo = setInterval(sortearE_DeslizarPokemon, 1000);
+}
+
+function sortearE_DeslizarPokemon() {
+    let telaJogo = document.querySelector('#jogo');
+
+    if (telaJogo.style.display !== 'block') return;
+
+    let indiceAleatorio = Math.floor(Math.random() * listaPokemons.length);
+    let pokemonEscolhido = listaPokemons[indiceAleatorio];
+
+    let ladoAleatorio = Math.random() < 0.5 ? 'esquerda' : 'direita';
+
+    let img = document.createElement('img');
+    img.src = pokemonEscolhido.srcImg;
+    img.classList.add('pokemon-spawn');
+
+    if (ladoAleatorio === 'esquerda') {
+        img.classList.add('spawn-esquerda');
+    } else {
+        img.classList.add('spawn-direita');
+    }
+
+    telaJogo.appendChild(img);
+
+    setTimeout(() => {
+        if (ladoAleatorio === 'esquerda') {
+            img.style.transform = 'translateX(calc(50vw - 60px))'; 
+        } else {
+            img.style.transform = 'translateX(calc(-50vw + 60px))';
+        }
+    }, 50);
+
+    setTimeout(() => {
+        img.remove();
+    }, 3500);
 }
 
 function retomarJogo() {
