@@ -12,17 +12,17 @@ const listaPokemons = [
     {
         nome: 'Rattata',
         vida: 1,
-        srcImg: 'rattata-f.png'
+        srcImg: 'imgs/rattata-f.png'
     },
     {
         nome: 'Arcanine',
         vida: 2,
-        srcImg: 'arcanine.png'
+        srcImg: 'imgs/arcanine.png'
     },
     {
         nome: 'Rhydom',
         vida: 2,
-        srcImg: 'rhydon.png'
+        srcImg: 'imgs/rhydon.png'
     },
 
 ];
