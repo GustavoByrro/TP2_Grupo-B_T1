@@ -8,7 +8,22 @@ const listaPokemons = [
         nome: 'Pikachu',
         vida: 1,
         srcImg: 'imgs/pikachu.png'
-    }
+    },
+    {
+        nome: 'Rattata',
+        vida: 1,
+        srcImg: 'rattata-f.png'
+    },
+    {
+        nome: 'Arcanine',
+        vida: 2,
+        srcImg: 'arcanine.png'
+    },
+    {
+        nome: 'Rhydom',
+        vida: 2,
+        srcImg: 'rhydon.png'
+    },
 
 ];
 
